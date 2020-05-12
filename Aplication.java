@@ -9,7 +9,7 @@ public class Aplication {
         Scanner reader = new Scanner(System.in);
         int codventa = 0;
         int dni = 0;
-        int precio = 0;
+        int preciounit = 0;
         int codart = 0;
         String art="";
         String nombre="";
@@ -56,6 +56,7 @@ public class Aplication {
         System.out.println ("El nombre del Cliente ingresado es/" + cliente1.getNombre()+"/");
         System.out.println ("El numero de codigo del articulo ingresado es/" + articulo1.getCodart() + "/");
         System.out.println ("El articulo ingresado es/" + articulo1.getArt() + "/");
+        
         System.out.println ("El monto ingresado es $" + venta1.getPrecio());
         
         

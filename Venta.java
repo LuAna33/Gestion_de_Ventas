@@ -1,7 +1,6 @@
 
 public class Venta { 
         int codventa = 0;
-        int precio = 0;
         Cliente cliente;
         Articulo articulo;
         
@@ -24,14 +23,7 @@ public class Venta {
         void setCodventa(int codventa ){
              this.codventa = codventa;
         }
-        int getPrecio(){
-            return precio;
-        }
-        void setPrecio (int precio){
-             this.precio = precio;
-        }
-                     
-                
+                       
 }    
         
     
