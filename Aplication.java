@@ -10,54 +10,50 @@ public class Aplication {
         int codventa = 0;
         int dni = 0;
         int preciounit = 0;
+        int cantidad = 0;
         int codart = 0;
+        int precioxcantidad = 0;
+        int descuentoxcantidad = 0;
+        int preciofinal = 0;
         String art="";
         String nombre="";
+        Articulo articulo1;
         
         Venta venta1= new Venta();
         System.out.println("Ingrese el Codigo de venta");
         codventa = reader.nextInt();
         venta1.setCodventa(codventa);
-        
-        
+                
         Cliente cliente1 = new Cliente();
         System.out.println("Bienvenido. Ingrese el DNI del cliente");
         dni = reader.nextInt();
         cliente1.setDni(dni);
-        
-        
-        Scanner reader2 = new Scanner(System.in);
+               
+        Scanner reader1 = new Scanner(System.in);
         System.out.println ("Ingrese el nombre del cliente");
-        nombre = reader2.nextLine();
+        nombre = reader1.nextLine();
         cliente1.setNombre(nombre);
-        
-        
-        Articulo articulo1 = new Articulo();
-        Scanner reader3 = new Scanner(System.in);
-        System.out.println ("Ingresar numero de codigo del articulo");
-        codart= reader3.nextInt();
-        articulo1.setCodart(codart);
-        
-        
-        Scanner reader4 = new Scanner(System.in);
         System.out.println ("Ingresar el nombre articulo");
-        art = reader4.nextLine();
-        articulo1.setArt(art);
+        art = reader1.nextLine();
         
-        
-        Scanner reader5 = new Scanner(System.in);
-        System.out.println ("Ingrese el monto final de la venta");
-        precio = reader5.nextInt();
-        venta1.setPrecio(precio);
-        
-        
-        System.out.println("El codigo de venta ingresado es N°" +venta1.getCodventa() +"/");
-        System.out.println("El dni ingresado es /" + cliente1.getDni()+"/");
-        System.out.println ("El nombre del Cliente ingresado es/" + cliente1.getNombre()+"/");
-        System.out.println ("El numero de codigo del articulo ingresado es/" + articulo1.getCodart() + "/");
-        System.out.println ("El articulo ingresado es/" + articulo1.getArt() + "/");
-        
-        System.out.println ("El monto ingresado es $" + venta1.getPrecio());
+        System.out.println ("Ingresar numero de codigo del articulo");
+        codart= reader.nextInt();
+        System.out.println ("Ingrese el Precio del articulo");
+        preciounit = reader.nextInt();
+        System.out.println ("Ingrese la cantidad de articulos");
+        cantidad = reader.nextInt();
+                       
+        System.out.println ("El precio sin descuento es.." + precioxcantidad);
+        System.out.println ("Ingrese descuento por cantidad en caso de corresponder");
+        descuentoxcantidad = reader.nextInt();
+        Articulo articulo2 = new Articulo(codart, preciounit, cantidad, descuentoxcantidad);
+                                      
+                                                                     
+        System.out.println ("Detalles de la venta");
+        System.out.println ("El codigo de venta ingresado es N°" +venta1.getCodventa() +"/");
+        System.out.println ("El dni ingresado es /" + cliente1.getDni()+" / El nombre del Cliente ingresado es/" + cliente1.getNombre()+"/");
+        System.out.println ("El articulo ingresado es / " + articulo2.getArt() + " / El numero de codigo del articulo ingresado es / " + articulo2.getCodart() + "/");
+        System.out.println ("El monto final es $" + articulo2.getPreciofinal());
         
         
     }

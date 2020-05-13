@@ -2,6 +2,9 @@ public class Cliente{
 
     int dni = 0;
     String nombre; 
+    
+    public Cliente(){
+    }
 
     int getDni(){
         return dni;

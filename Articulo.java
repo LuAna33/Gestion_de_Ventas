@@ -5,8 +5,11 @@ public class Articulo{
     int cantidad = 0;
     int preciounit = 0;
     int precioxcantidad = 0;
+    int descuentoxcantidad = 0;
+    int preciofinal= 0;
     String art="";
     Cliente cliente1;
+    
     
     public Articulo(int codArt, int precio)
     {
@@ -14,12 +17,15 @@ public class Articulo{
         this.preciounit = precio;
     }
     
-    public Articulo(int codArt, int precio, int cantidad)
+    public Articulo(int codArt, int preciounit, int cantidad, int descuentoxcantidad)
     {
         this.codart = codArt;
-        this.preciounit = precio;
+        this.preciounit = preciounit;
         this.cantidad = cantidad;
         this.precioxcantidad = preciounit * cantidad;
+        this.descuentoxcantidad = ((precioxcantidad * descuentoxcantidad) / 100);
+        this.preciofinal = this.precioxcantidad - this.descuentoxcantidad;
+        
     }
     
     Cliente getCliente1(){
@@ -33,13 +39,15 @@ public class Articulo{
     int getCodart(){
         return codart;
     }
-    String getArt(){
-        return art;
-    }
     void setCodart (int codart){
         this.codart = codart;
     }
-    void setArt (String art){
+    
+    String getArt(){
+        return art;
+    }
+    
+        void setArt (String art){
         this.art = art ;
     }
     
@@ -48,6 +56,9 @@ public class Articulo{
     }
     void setCantidad (int cantidad){
         this.cantidad = cantidad;
+        this.precioxcantidad = cantidad * preciounit;
+        this.descuentoxcantidad = ((precioxcantidad * descuentoxcantidad) / 100);
+        this.preciofinal = this.precioxcantidad - this.descuentoxcantidad;
     }
     int getPreciounit(){
         return preciounit;
@@ -57,5 +68,11 @@ public class Articulo{
     }
     int getPrecioxcantidad(){
         return precioxcantidad;
+    }
+    int getDescuentoxcantidad(){
+        return descuentoxcantidad;
+    }
+    int getPreciofinal (){
+        return preciofinal;
     }
 }
