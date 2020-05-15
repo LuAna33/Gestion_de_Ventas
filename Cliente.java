@@ -2,6 +2,7 @@ public class Cliente{
 
     int dni = 0;
     String nombre; 
+    Cliente cliente1;
     
     public Cliente(){
     }
