@@ -40,18 +40,18 @@ public class Articulo{
         }
     }
             
-    int getCodart(){
+    int getCodArt(){
         return codart;
     }
-    void setCodart (int codart){
+    void setCodArt (int codart){
         this.codart = codart;
     }
     
-    String getNombrearticulo(){
+    String getNombreArticulo(){
         return nombrearticulo;
     }
     
-    void setNombrearticulo (String nombrearticulo){
+    void setNombreArticulo (String nombrearticulo){
     this.nombrearticulo = nombrearticulo ;
     }
     
@@ -73,38 +73,52 @@ public class Articulo{
         actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
     }
     
-    int getPrecioxcantidad(){
+    int getPrecioxCantidad(){
         return precioxcantidad;
     }
     
-    void setPrecioxcantidad (int precioxcantidad){
+    void setPrecioxCantidad (int precioxcantidad){
        this.precioxcantidad = this.preciounit * this.cantidad;
        actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
     }
         
-    int getDescuentoxcantidad(){
+    int getDescuentoxCantidad(){
         return descuentoxcantidad;
     }
-    void setDescuentoxcantidad (int descuentoxcantidad){
+    void setDescuentoxCantidad (int descuentoxcantidad){
     this.descuentoxcantidad = descuentoxcantidad;
     actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
     }
-    int getPreciofinal (){
+    int getPrecioFinal (){
         return preciofinal;
     }
-    int getCantidadminima(){
+    int getCantidadMinima(){
         return cantidadminima;
     }
-    void setcantidadminima(int cantidadminima){
+    void setCantidadMinima(int cantidadminima){
         this.cantidadminima = cantidadminima;
         actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
     }
-    int getDescuentoporcentaje (){
+    int getDescuentoPorcentaje (){
         return descuentoporcentaje;
     }
-    void setdescuentoporcentaje (int descuentoporcentaje){
+    void setDescuentoPorcentaje (int descuentoporcentaje){
         this.descuentoporcentaje = descuentoporcentaje;
         actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
       
     }
+    public void imprimirArticulo (){
+        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DEL ARTICULO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        
+        System.out.println ("///El N° codigo del Articulo es ///" + this.getCodArt() +"///");
+        System.out.println ("///El Articulo ingresado es ///" + this.getNombreArticulo() + "///");
+        System.out.println ("///La cantidad de articulos es...///" + this.getCantidad() +"///");
+        System.out.println ("///El Precio por unidad es...///" + this.getPreciounit() + "///");
+        System.out.println ("///El descuento por Cantidad es...///" + this.getDescuentoxCantidad() +"///");
+        System.out.println ("///La Cantidad minima para acceder a un descuento es... ///" + this.getCantidadMinima() + "///");
+        System.out.println ("///El porcentaje a descontar por cantidad es..." + this.getDescuentoPorcentaje() +"///");
+    }
+        
 }

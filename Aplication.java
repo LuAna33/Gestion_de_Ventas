@@ -18,13 +18,13 @@ public class Aplication {
         int descuentoxcantidad = 0;
         int preciofinal = 0;
         String nombrearticulo="";
-        String nombre="";
+        String nombrecliente="";
         Articulo articulo1;
         
         Venta venta1= new Venta();
         System.out.println("<<<<<<<<<Bienvenido! Por favor ingresar el Codigo de venta>>>>>>>>");
         codventa = reader.nextInt();
-        venta1.setCodventa(codventa);
+        venta1.setCodVenta(codventa);
                 
         Cliente cliente1 = new Cliente();
         System.out.println("<<<<<<<Ingresar el DNI del cliente>>>>>>>>");
@@ -33,8 +33,8 @@ public class Aplication {
               
         Scanner reader1 = new Scanner(System.in);
         System.out.println ("<<<<<<<Ingresar el nombre del cliente>>>>>>");
-        nombre = reader1.nextLine();
-        cliente1.setNombre(nombre);
+        nombrecliente = reader1.nextLine();
+        cliente1.setNombreCliente(nombrecliente);
         
         System.out.println ("<<<<<Ingresar el nombre articulo>>>>>>");
         nombrearticulo = reader1.nextLine();
@@ -49,20 +49,16 @@ public class Aplication {
         System.out.println ("<<<<<<<Ingrese la cantidad de articulos>>>>>>");
         cantidad = reader.nextInt(); 
                                              
-        Articulo articulo2 = new Articulo(nombrearticulo, codart, preciounit, cantidad, cantidadminima, descuentoporcentaje);
-        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DE LA VENTA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println ("///El codigo de venta ingresado es N°" + venta1.getCodventa() +"///");
-        System.out.println ("///El dni ingresado es ///" + cliente1.getDni() + "///");
-        System.out.println ("///El nombre del Cliente ingresado es///" + cliente1.getNombre()+ "///");
-        System.out.println ("///El articulo ingresado es /// " + articulo2.getNombrearticulo()+ "///"); 
-        System.out.println ("///El numero de codigo del articulo ingresado es /// " + articulo2.getCodart() + "///");
-        System.out.println ("///El monto final es ///$" + articulo2.getPreciofinal()+ "///");
-        System.out.println ("¡¡¡Gracias por su compra!!!");
-    }    
-}
+        articulo1 = new Articulo(nombrearticulo, codart, preciounit, cantidad, cantidadminima, descuentoporcentaje);
+      
+        venta1.setCliente(cliente1);
+        venta1.setArticulo(articulo1);
+        venta1.imprimirVenta();
+        
+    }
+}   
+     
+        
+ 
+
+
