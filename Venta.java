@@ -1,7 +1,6 @@
 
 public class Venta { 
         int codventa = 0;
-        int precio = 0;
         Cliente cliente;
         Articulo articulo;
         
@@ -18,22 +17,28 @@ public class Venta {
         void setArticulo (Articulo articulo){
              this.articulo = articulo;
         }
-        int getCodventa(){
+        int getCodVenta(){
             return codventa;
         }
-        void setCodventa(int codventa ){
+        void setCodVenta(int codventa ){
              this.codventa = codventa;
         }
-        int getPrecio(){
-            return precio;
-        }
-        void setPrecio (int precio){
-             this.precio = precio;
-        }
-                     
-                
-}    
         
+         public void imprimirVenta (){
+                        
+            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DE LA VENTA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            
+            System.out.println ("///El codigo de venta ingresado es N°" + this.getCodVenta() +"///");
+            System.out.println ("///El monto final es ///$" + this.getArticulo().getPrecioFinal()+ "///");
+            System.out.println ("¡¡¡Gracias por su compra!!!");
+            
+            this.getCliente().imprimirCliente();
+            this.getArticulo().imprimirArticulo();
+        }
+    
+    }        
     
     
 
