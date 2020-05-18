@@ -1,58 +1,58 @@
 
 public class Articulo{
-    String nombrearticulo=""; 
-    int codart = 0;
+    String nombreArticulo=""; 
+    int codArt = 0;
     int preciounit = 0;
     int cantidad = 0;
-    int cantidadminima = 0;
-    int descuentoporcentaje = 0;
-    int precioxcantidad = 0;
-    int descuentoxcantidad = 0;    
-    int preciofinal= 0;
+    int cantidadMinima = 0;
+    int descuentoPorcentaje = 0;
+    int precioxCantidad = 0;
+    int descuentoxCantidad = 0;    
+    int precioFinal= 0;
               
-    public Articulo(int codart, int preciounit){
-        this.codart = codart;
+    public Articulo(int codArt, int preciounit){
+        this.codArt = codArt;
         this.preciounit = preciounit;
     }
     
-    public Articulo(String nombrearticulo, int codart, int preciounit, int cantidad,int cantidadminima,int descuentoporcentaje)
+    public Articulo(String nombreArticulo, int codArt, int preciounit, int cantidad,int cantidadMinima,int descuentoPorcentaje)
     {
-        this.nombrearticulo = nombrearticulo;
-        this.codart = codart; 
-        actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
+        this.nombreArticulo = nombreArticulo;
+        this.codArt = codArt; 
+        actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
     }
         
-     public void actualizarDatos(int preciounit, int cantidad,int cantidadminima,int descuentoporcentaje)
+     public void actualizarDatos(int preciounit, int cantidad,int cantidadMinima,int descuentoPorcentaje)
     {
         this.preciounit = preciounit;
         this.cantidad = cantidad;
-        this.cantidadminima = cantidadminima;
-        this.descuentoporcentaje = descuentoporcentaje;
+        this.cantidadMinima = cantidadMinima;
+        this.descuentoPorcentaje = descuentoPorcentaje;
         //Calculables
-        this.precioxcantidad = this.preciounit * this.cantidad;
-        if (this.cantidad >= this.cantidadminima){
-        this.descuentoxcantidad = ((this.precioxcantidad * this.descuentoporcentaje) / 100);
-        this.preciofinal = this.precioxcantidad - this.descuentoxcantidad;
-        System.out.println ("Dada la cantidad de unidades compradas es beneficiario de un descuento del " + descuentoporcentaje + "%");
+        this.precioxCantidad = this.preciounit * this.cantidad;
+        if (this.cantidad >= this.cantidadMinima){
+        this.descuentoxCantidad = ((this.precioxCantidad * this.descuentoPorcentaje) / 100);
+        this.precioFinal = this.precioxCantidad - this.descuentoxCantidad;
+        System.out.println ("Dada la cantidad de unidades compradas es beneficiario de un descuento del " + descuentoPorcentaje + "%");
         }
         else{
-            preciofinal = precioxcantidad;
+            precioFinal = precioxCantidad;
         }
     }
             
     int getCodArt(){
-        return codart;
+        return codArt;
     }
     void setCodArt (int codart){
-        this.codart = codart;
+        this.codArt = codArt;
     }
     
     String getNombreArticulo(){
-        return nombrearticulo;
+        return nombreArticulo;
     }
     
-    void setNombreArticulo (String nombrearticulo){
-    this.nombrearticulo = nombrearticulo ;
+    void setNombreArticulo (String nombreArticulo){
+    this.nombreArticulo = nombreArticulo ;
     }
     
     int getCantidad(){
@@ -61,7 +61,7 @@ public class Articulo{
     
     void setCantidad (int cantidad){
         this.cantidad = cantidad;
-        actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);   
+        actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);   
     }
     
     int getPreciounit(){
@@ -70,41 +70,41 @@ public class Articulo{
     
     void setPreciounit(int preciounit){
         this.preciounit = preciounit;
-        actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
+        actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
     }
     
     int getPrecioxCantidad(){
-        return precioxcantidad;
+        return precioxCantidad;
     }
     
-    void setPrecioxCantidad (int precioxcantidad){
-       this.precioxcantidad = this.preciounit * this.cantidad;
-       actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
+    void setPrecioxCantidad (int precioxCantidad){
+       this.precioxCantidad = this.preciounit * this.cantidad;
+       actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
     }
         
     int getDescuentoxCantidad(){
-        return descuentoxcantidad;
+        return descuentoxCantidad;
     }
     void setDescuentoxCantidad (int descuentoxcantidad){
-    this.descuentoxcantidad = descuentoxcantidad;
-    actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
+    this.descuentoxCantidad = descuentoxCantidad;
+    actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
     }
     int getPrecioFinal (){
-        return preciofinal;
+        return precioFinal;
     }
     int getCantidadMinima(){
-        return cantidadminima;
+        return cantidadMinima;
     }
-    void setCantidadMinima(int cantidadminima){
-        this.cantidadminima = cantidadminima;
-        actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
+    void setCantidadMinima(int cantidadMinima){
+        this.cantidadMinima = cantidadMinima;
+        actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
     }
     int getDescuentoPorcentaje (){
-        return descuentoporcentaje;
+        return descuentoPorcentaje;
     }
-    void setDescuentoPorcentaje (int descuentoporcentaje){
-        this.descuentoporcentaje = descuentoporcentaje;
-        actualizarDatos(preciounit, cantidad, cantidadminima, descuentoporcentaje);
+    void setDescuentoPorcentaje (int descuentoPorcentaje){
+        this.descuentoPorcentaje = descuentoPorcentaje;
+       actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
       
     }
     public void imprimirArticulo (){

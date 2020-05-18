@@ -1,8 +1,8 @@
 public class Cliente{
 
     int dni = 0;
-    String nombrecliente; 
-    Cliente cliente1;
+    String nombreCliente; 
+    
     
     public Cliente(){
     }
@@ -11,13 +11,13 @@ public class Cliente{
         return dni;
     }
     String getNombreCliente(){
-        return nombrecliente;
+        return nombreCliente;
     }
     void setDni (int dni){
         this.dni = dni;
     }
-    void setNombreCliente (String nombrecliente){
-        this.nombrecliente = nombrecliente;
+    void setNombreCliente (String nombreCliente){
+        this.nombreCliente = nombreCliente;
     }
     public void imprimirCliente (){
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
