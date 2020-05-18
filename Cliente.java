@@ -1,10 +1,11 @@
 public class Cliente{
-
+    
+    String nombreCliente;
     int dni = 0;
-    String nombreCliente; 
-    
-    
-    public Cliente(){
+            
+    public Cliente(String nombreCliente, int dni){
+        this.nombreCliente = nombreCliente;
+        this.dni = dni;
     }
 
     int getDni(){
@@ -19,6 +20,7 @@ public class Cliente{
     void setNombreCliente (String nombreCliente){
         this.nombreCliente = nombreCliente;
     }
+    
     public void imprimirCliente (){
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DEL CLIENTE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
