@@ -7,24 +7,24 @@ public class Aplication {
         // Completas las relaciones 
         // Traer los datos de las relaciones
         Scanner reader = new Scanner(System.in);
-        int codventa = 0;
+        int codVenta = 0;
         int dni = 0;
-        int codart = 0;
+        int codArt = 0;
         int preciounit = 0;
-        int cantidadminima = 0;
+        int cantidadMinima = 0;
         int cantidad = 0;
-        int precioxcantidad = 0;
-        int descuentoporcentaje = 0;
-        int descuentoxcantidad = 0;
-        int preciofinal = 0;
-        String nombrearticulo="";
-        String nombrecliente="";
+        int precioxCantidad = 0;
+        int descuentoPorcentaje = 0;
+        int descuentoxCantidad = 0;
+        int precioFinal = 0;
+        String nombreArticulo="";
+        String nombreCliente="";
         Articulo articulo1;
         
         Venta venta1= new Venta();
         System.out.println("<<<<<<<<<Bienvenido! Por favor ingresar el Codigo de venta>>>>>>>>");
-        codventa = reader.nextInt();
-        venta1.setCodVenta(codventa);
+        codVenta = reader.nextInt();
+        venta1.setCodVenta(codVenta);
                 
         Cliente cliente1 = new Cliente();
         System.out.println("<<<<<<<Ingresar el DNI del cliente>>>>>>>>");
@@ -33,23 +33,23 @@ public class Aplication {
               
         Scanner reader1 = new Scanner(System.in);
         System.out.println ("<<<<<<<Ingresar el nombre del cliente>>>>>>");
-        nombrecliente = reader1.nextLine();
-        cliente1.setNombreCliente(nombrecliente);
+        nombreCliente = reader1.nextLine();
+        cliente1.setNombreCliente(nombreCliente);
         
-        System.out.println ("<<<<<Ingresar el nombre articulo>>>>>>");
-        nombrearticulo = reader1.nextLine();
+        System.out.println ("<<<<<Ingresar el nombre del articulo>>>>>>");
+        nombreArticulo = reader1.nextLine();
         System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
-        codart= reader.nextInt();
+        codArt= reader.nextInt();
         System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
         preciounit = reader.nextInt();
         System.out.println("<<<<<<<Ingrese la cantidad minima para aplicar descuento por cantidad de productos comprados>>>>>>");
-        cantidadminima =  reader.nextInt();
+        cantidadMinima =  reader.nextInt();
         System.out.println("<<<<<<<Ingrese el Porcentaje a aplicar del descuento por cantidad>>>>>>");
-        descuentoporcentaje = reader.nextInt();
+        descuentoPorcentaje = reader.nextInt();
         System.out.println ("<<<<<<<Ingrese la cantidad de articulos>>>>>>");
         cantidad = reader.nextInt(); 
                                              
-        articulo1 = new Articulo(nombrearticulo, codart, preciounit, cantidad, cantidadminima, descuentoporcentaje);
+        articulo1 = new Articulo(nombreArticulo, codArt, preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
       
         venta1.setCliente(cliente1);
         venta1.setArticulo(articulo1);

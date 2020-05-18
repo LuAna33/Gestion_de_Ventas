@@ -1,6 +1,6 @@
 
 public class Venta { 
-        int codventa = 0;
+        int codVenta = 0;
         Cliente cliente;
         Articulo articulo;
         
@@ -18,10 +18,10 @@ public class Venta {
              this.articulo = articulo;
         }
         int getCodVenta(){
-            return codventa;
+            return codVenta;
         }
-        void setCodVenta(int codventa ){
-             this.codventa = codventa;
+        void setCodVenta(int codVenta ){
+             this.codVenta = codVenta;
         }
         
          public void imprimirVenta (){
