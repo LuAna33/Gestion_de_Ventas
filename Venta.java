@@ -1,18 +1,15 @@
 
 public class Venta { 
         
-        int codVenta = 0;
-        int preciounit = 0;
-        int cantidad = 0;
-        int cantidadMinima = 0;
-        int descuentoPorcentaje = 0;
-        int precioxCantidad = 0;
-        int descuentoxCantidad = 0;    
-        int precioFinal= 0;
+        int codVenta;
+        int preciounit;
+        int cantidad;
+        int cantidadMinima;
+        int descuentoPorcentaje;
+        int precioFinal;
         Cliente cliente;
         Articulo articulo;
-    
-        
+            
     public Venta (int codVenta, int preciounit, int cantidad,int cantidadMinima,int descuentoPorcentaje){
         this.codVenta = codVenta;
         this.preciounit = preciounit;
@@ -21,6 +18,10 @@ public class Venta {
         this.descuentoPorcentaje = descuentoPorcentaje;
         actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
     }
+    
+    public int calcularPrecioCantidad(int preciounit, int cantidad){
+        return preciounit * cantidad;
+    }
         
     public void actualizarDatos(int preciounit, int cantidad,int cantidadMinima,int descuentoPorcentaje){
         
@@ -28,15 +29,15 @@ public class Venta {
         this.cantidad = cantidad;
         this.cantidadMinima = cantidadMinima;
         this.descuentoPorcentaje = descuentoPorcentaje;
-        //Calculables
-        this.precioxCantidad = this.preciounit * this.cantidad;
+        
+        int precioCantidad = calcularPrecioCantidad(this.preciounit, this.cantidad);
+        int descuentoCantidad = precioCantidad * descuentoPorcentaje / 100;//Calculables
         if (this.cantidad >= this.cantidadMinima){
-        this.descuentoxCantidad = ((this.precioxCantidad * this.descuentoPorcentaje) / 100);
-        this.precioFinal = this.precioxCantidad - this.descuentoxCantidad;
+        this.precioFinal = precioCantidad - descuentoCantidad;
         System.out.println ("Dada la cantidad de unidades compradas es beneficiario de un descuento del " + descuentoPorcentaje + "%");
         }
         else{
-            precioFinal = precioxCantidad;
+            precioFinal = precioCantidad;
         }
     }
         //Completar los getter y setter
@@ -75,26 +76,11 @@ public class Venta {
         this.preciounit = preciounit;
         actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
     }
-    
-    int getPrecioxCantidad(){
-        return precioxCantidad;
-    }
-    
-    void setPrecioxCantidad (int precioxCantidad){
-       this.precioxCantidad = this.preciounit * this.cantidad;
-       actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
-    }
-        
-    int getDescuentoxCantidad(){
-        return descuentoxCantidad;
-    }
-    void setDescuentoxCantidad (int descuentoxcantidad){
-    this.descuentoxCantidad = descuentoxCantidad;
-    actualizarDatos(preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
-    }
+                
     int getPrecioFinal (){
         return precioFinal;
     }
+    
     int getCantidadMinima(){
         return cantidadMinima;
     }
