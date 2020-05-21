@@ -1,8 +1,8 @@
 public class Cliente{
     
     String nombreCliente;
-    int dni = 0;
-            
+    int dni;
+  
     public Cliente(String nombreCliente, int dni){
         this.nombreCliente = nombreCliente;
         this.dni = dni;

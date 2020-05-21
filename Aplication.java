@@ -7,16 +7,13 @@ public class Aplication {
         // Completas las relaciones 
         // Traer los datos de las relaciones
         Scanner reader = new Scanner(System.in);
-        int codVenta = 0;
-        int dni = 0;
-        int codArt = 0;
-        int preciounit = 0;
-        int cantidadMinima = 0;
-        int cantidad = 0;
-        int precioxCantidad = 0;
-        int descuentoPorcentaje = 0;
-        int descuentoxCantidad = 0;
-        int precioFinal = 0;
+        int codVenta;
+        int dni;
+        int codArt;
+        int preciounit;
+        int cantidadMinima;
+        int cantidad ;
+        int descuentoPorcentaje;
         String nombreArticulo="";
         String nombreCliente="";
         Venta venta1;
@@ -53,7 +50,7 @@ public class Aplication {
         venta1.setArticulo(articulo1);
         venta1.imprimirVenta();
         
-    }
+   }
 }   
      
         
