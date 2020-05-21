@@ -91,7 +91,6 @@ public class Venta {
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DE LA VENTA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-           
             System.out.println ("///El codigo de venta ingresado es N°" + getCodVenta() +"///");
             System.out.println ("///La cantidad de articulos es..." + getCantidad() + "///");
             System.out.println ("///La cantidad minima para acceder al descuento es..." + getCantidadMinima() + "///");
@@ -101,6 +100,7 @@ public class Venta {
             
             getCliente().imprimirCliente();
             getArticulo().imprimirArticulo();
+
     }
 }        
     

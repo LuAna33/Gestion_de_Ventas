@@ -2,7 +2,7 @@ public class Cliente{
     
     String nombreCliente;
     int dni;
-            
+  
     public Cliente(String nombreCliente, int dni){
         this.nombreCliente = nombreCliente;
         this.dni = dni;

@@ -46,8 +46,6 @@ public class Aplication {
         cliente1 = new Cliente (nombreCliente, dni);                                       
         articulo1 = new Articulo (nombreArticulo, codArt, preciounit);
         venta1 = new Venta (codVenta,preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
-        
-        
         venta1.setCliente(cliente1);
         venta1.setArticulo(articulo1);
         venta1.imprimirVenta();
