@@ -14,7 +14,6 @@ public class Aplication {
         int cantidadMinima;
         int cantidad ;
         int descuentoPorcentaje;
-        int precioFinal;
         String nombreArticulo="";
         String nombreCliente="";
         Venta venta1;
