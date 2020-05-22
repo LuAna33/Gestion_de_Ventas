@@ -5,60 +5,77 @@ public class Venta {
         int cantidad;
         int cantidadMinima;
         int descuentoPorcentaje;
+        String c;ontinuarComprando;
         Cliente cliente;
         Articulo articulo;
-            
-    public Venta (int codVenta, int preciounit, int cantidad,int cantidadMinima,int descuentoPorcentaje){
+       
+  public Venta (int codVenta, int preciounit, int cantidad,int cantidadMinima,int descuentoPorcentaje){
         this.codVenta = codVenta;
         this.preciounit = preciounit;
         this.cantidad = cantidad;
         this.cantidadMinima = cantidadMinima;
         this.descuentoPorcentaje = descuentoPorcentaje;
+  }
+     
+   public int realizarVenta(){
+       Scanner reader = new scanner (System.in);
+       while (agregarArticulo == S){
+           
+           System.out.println (" Si desea agregar un articulo ingrese S ");
+           continuarComprando= reader.nextLine;
+           
+        
+       public int calcularPrecioCantidad(){
+            return preciounit * cantidad;        
+       }
+    
+       public int calcularDescuentoCantidad (){
+            return calcularPrecioCantidad() * descuentoPorcentaje / 100;
+       }
+    
+       public int calcularPrecioFinal (){
+           int precioCantidad = calcularPrecioCantidad();
+           int descuentoCantidad = calcularDescuentoCantidad(); 
+           
+           if (cantidad >= cantidadMinima){
+              return precioCantidad - descuentoCantidad;
+           }
+           else{
+              return precioCantidad;
+           }       
+         }
+    
+    
+         Cliente getCliente(){
+            return cliente;
+         }
+    
+    void setCliente(Cliente cliente){
+           this.cliente = cliente;
+    }
+   
+    Articulo getArticulo(){
+            return articulo;
+    }
+   
+    void setArticulo (Articulo articulo){
+            this.articulo = articulo;
+    }
+    
+    int getCodVenta(){
+            return codVenta;
     }
          
-    public int calcularPrecioCantidad(){
-        return preciounit * cantidad;        
-    }
-    
-    public int calcularDescuentoCantidad (){
-        return calcularPrecioCantidad() * descuentoPorcentaje / 100;
-    }
-    
-    public int calcularPrecioFinal (){
-        int precioCantidad = calcularPrecioCantidad();
-        int descuentoCantidad = calcularDescuentoCantidad(); 
-           
-        if (cantidad >= cantidadMinima){
-            return precioCantidad - descuentoCantidad;
-        }else{
-            return precioCantidad;
-        }       
-    }
-      
-    Cliente getCliente(){
-        return cliente;
-    }
-    void setCliente(Cliente cliente){
-        this.cliente = cliente;
-    }
-    Articulo getArticulo(){
-        return articulo;
-    }
-    void setArticulo (Articulo articulo){
-        this.articulo = articulo;
-    }
-    int getCodVenta(){
-        return codVenta;
-    }
     void setCodVenta(int codVenta ){
-        this.codVenta = codVenta;
+            this.codVenta = codVenta;
     }
+         
     int getCantidad(){
-        return cantidad;
+            return cantidad;
     }
     
-    void setCantidad (int cantidad){
-        this.cantidad = cantidad;  
+         void setCantidad (int cantidad){
+            this.cantidad = cantidad;  
     }
     
     int getPreciounit(){
@@ -85,9 +102,9 @@ public class Venta {
         this.descuentoPorcentaje = descuentoPorcentaje;
               
     }
-        
+    }                
     public void imprimirVenta (){
-                        
+        
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DE LA VENTA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -100,9 +117,9 @@ public class Venta {
             
             getCliente().imprimirCliente();
             getArticulo().imprimirArticulo();
+   }
 
-    }
-}        
+  
     
     
 
