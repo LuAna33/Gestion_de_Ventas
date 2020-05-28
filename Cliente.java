@@ -1,24 +1,26 @@
-public class Cliente{
+public class Cliente extends Persona{
+        
+    TipoCliente tipoCliente; 
     
-    String nombreCliente;
-    int dni;
+    Cliente (String nombre, int dni, TipoCliente tipoCliente){
+        super(nombre,dni);//Para invocar al contructor de la SuperClase//
+        this.tipoCliente=tipoCliente;
+    }
+    
+    public String toString(){
+        return " nombre = " + nombre + " dni " + dni + " tipoCliente " + tipoCliente; 
+    }
   
-    public Cliente(String nombreCliente, int dni){
-        this.nombreCliente = nombreCliente;
-        this.dni = dni;
+     public void mostrarTipoCliente(){
+        System.out.println(" El tipo de cliente ingresado es ..." + tipoCliente);
     }
-
-    int getDni(){
-        return dni;
+   
+        TipoCliente getTipoCliente(){
+          return tipoCliente;
     }
-    String getNombreCliente(){
-        return nombreCliente;
-    }
-    void setDni (int dni){
-        this.dni = dni;
-    }
-    void setNombreCliente (String nombreCliente){
-        this.nombreCliente = nombreCliente;
+    
+        void setTipoCliente (TipoCliente tipoCliente){
+        this.tipoCliente = tipoCliente;
     }
     
     public void imprimirCliente (){
@@ -26,8 +28,8 @@ public class Cliente{
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DEL CLIENTE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         
-        System.out.println ("///El Nombre del Cliente es..." + this.getNombreCliente() +"///");
-        System.out.println ("///El DNI ingresado es... ///" + this.getDni() + "///");
+        System.out.println ("///El Nombre del Cliente es..." + nombre);
+        System.out.println ("///El DNI ingresado es... " + dni);
     }
 }
 

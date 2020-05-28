@@ -1,5 +1,7 @@
 
 import java.util.Scanner;
+
+
  public class Aplication { 
     
      
@@ -25,7 +27,7 @@ import java.util.Scanner;
         Articulo articulo1;
         Cliente cliente1;
         Venta venta1;
-        
+        TipoCliente tipoCliente;
                 
        System.out.println (" Si desea realizar una venta ingrese 1 ");
        continuarComprando= reader.nextInt(); 
@@ -34,7 +36,7 @@ import java.util.Scanner;
              
         cliente1 = entradaCliente(reader, reader1);
         articulo1 = entradaArticulo(reader, reader1);
-        venta1 = entradaVenta(reader);
+        venta1 = entradaVenta(reader, articulo1);
         procesarVenta(venta1, articulo1, cliente1);
                
         System.out.println (" Si desea realizar otra venta ingrese 1 ");
@@ -50,14 +52,17 @@ import java.util.Scanner;
         
     public static Cliente entradaCliente(Scanner reader, Scanner reader1){
         int dni;
-        String nombreCliente;
+        String nombre;
+        TipoCliente tipoCliente= TipoCliente.MAYORISTA;
         
         System.out.println("<<<<<<<Ingresar el DNI del cliente>>>>>>>>");
         dni = reader.nextInt();
                       
         System.out.println ("<<<<<<<Ingresar el nombre del cliente>>>>>>");
-        nombreCliente = reader1.nextLine();
-        return new Cliente (nombreCliente, dni);
+        nombre = reader1.nextLine();
+                     
+        return new Cliente (nombre,dni, tipoCliente);
+        
     }
     
     public static Articulo entradaArticulo(Scanner reader, Scanner reader1){
@@ -76,7 +81,7 @@ import java.util.Scanner;
        return new Articulo (nombreArticulo,codArt, preciounit);
     }
     
-    public static Venta entradaVenta(Scanner reader){   
+    public static Venta entradaVenta(Scanner reader,Articulo articulo1){   
        int codVenta;
        int cantidad;
        int cantidadMinima;
@@ -93,7 +98,7 @@ import java.util.Scanner;
        
        System.out.println("<<<<<<<Ingrese el Porcentaje a aplicar del descuento por cantidad>>>>>>");
        descuentoPorcentaje = reader.nextInt();
-       return new Venta (codVenta, cantidad, cantidadMinima, descuentoPorcentaje);
+       return new Venta (codVenta, cantidad, cantidadMinima, descuentoPorcentaje, articulo1);
     } 
     
     public static void procesarVenta (Venta venta1, Articulo articulo1,Cliente cliente1){
