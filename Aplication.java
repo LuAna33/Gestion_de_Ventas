@@ -1,10 +1,8 @@
 
 import java.util.Scanner;
 
-
  public class Aplication { 
-    
-     
+      
      public static void main (String [] args) { 
         
         //La Aplicacion gestion la venta, y una venta se relaciona con un cliente y un articulo
@@ -32,7 +30,7 @@ import java.util.Scanner;
         PuestoEmpleado puestoEmpleado;        
       
         System.out.println (" PARA REALIZAR UNA VENTA INGRESAR 1 ");
-       continuarComprando= reader.nextInt(); 
+         continuarComprando= reader.nextInt(); 
       
       while (continuarComprando == 1){
              
@@ -44,8 +42,7 @@ import java.util.Scanner;
                
         System.out.println (" PARA REALIZAR OTRA VENTA INGRESE 1 ");
         continuarComprando= reader.nextInt();   
-          
-     }  
+   }  
      
      if  (continuarComprando != 1){
            System.out.println("FIN DE LA OPERACION");

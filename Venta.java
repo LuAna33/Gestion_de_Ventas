@@ -9,6 +9,7 @@ public class Venta {
         Cliente cliente;
         Articulo articulo;
         Empleado empleado;
+       
     public Venta (int codVenta,int cantidad,int cantidadMinima,int descuentoPorcentaje, Articulo articulo){
         this.codVenta = codVenta;
         this.cantidad = cantidad;
