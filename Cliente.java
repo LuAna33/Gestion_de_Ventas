@@ -28,8 +28,9 @@ public class Cliente extends Persona{
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DEL CLIENTE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         
-        System.out.println ("///El Nombre del Cliente es..." + nombre);
-        System.out.println ("///El DNI ingresado es... " + dni);
+        System.out.println ("/// Nombre del Cliente ..." + nombre);
+        System.out.println ("/// DNI del Cliente ... " + dni);
+        System.out.println ("/// Tipo de Cliente ..." + tipoCliente);
     }
 }
 
