@@ -1,4 +1,5 @@
 
+
 public class Venta { 
         int codVenta;
         int cantidad;
@@ -8,11 +9,12 @@ public class Venta {
         Cliente cliente;
         Articulo articulo;
        
-    public Venta (int codVenta,int cantidad,int cantidadMinima,int descuentoPorcentaje){
+    public Venta (int codVenta,int cantidad,int cantidadMinima,int descuentoPorcentaje, Articulo articulo){
         this.codVenta = codVenta;
         this.cantidad = cantidad;
         this.cantidadMinima = cantidadMinima;
         this.descuentoPorcentaje = descuentoPorcentaje;
+        this.articulo = articulo;
     }
                        
       int calcularPrecioCantidad(){
