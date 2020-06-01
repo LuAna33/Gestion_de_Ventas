@@ -8,6 +8,7 @@ public class Venta {
         String continuarComprando;
         Cliente cliente;
         Articulo articulo;
+        Empleado empleado;
        
     public Venta (int codVenta,int cantidad,int cantidadMinima,int descuentoPorcentaje, Articulo articulo){
         this.codVenta = codVenta;
@@ -53,6 +54,14 @@ public class Venta {
       void setArticulo (Articulo articulo){
             this.articulo = articulo;
       }
+      
+      Empleado getEmpleado(){
+            return empleado;
+      }
+    
+      void setEmpleado(Empleado empleado){
+           this.empleado = empleado;
+      }
     
       int getCodVenta(){
             return codVenta;
@@ -96,10 +105,10 @@ public class Venta {
             System.out.println ("///La cantidad minima para acceder al descuento es..." + getCantidadMinima() + "///");
             System.out.println ("///El porcentaje de descuento por cantidad es..." + getDescuentoPorcentaje() + "///");
             System.out.println ("///El monto final es ///$" + calcularPrecioFinal()+ "///");
-            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                        
             getCliente().imprimirCliente();
             getArticulo().imprimirArticulo();
+            getEmpleado().imprimirEmpleado();
    }
    
 }
