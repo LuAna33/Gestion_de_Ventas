@@ -1,13 +1,12 @@
 
 import java.util.Scanner;
- public class GestionArticulos {
+public class GestionArticulos {
         
         Articulo[]articuloColeccion = {null, null, null, null };
                    
-        
     public void listarArticuloColeccion(){ 
         
-        for (int i = 0; i < articuloColeccion.length; i++){
+         for (int i = 0; i < articuloColeccion.length; i++){
            if (articuloColeccion[i] != null){
               System.out.println (articuloColeccion[i]);//no imprimir nulls - to string para ver el detalle del articulo
           
@@ -80,4 +79,4 @@ import java.util.Scanner;
         }
         return  cantidadArticulos;
     } 
-}   
+}    

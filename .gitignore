@@ -1,0 +1,5 @@
+###System Files###
+*.class
+*.ctxt
+*.jar
+*.bluej
