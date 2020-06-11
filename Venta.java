@@ -8,8 +8,8 @@ public class Venta {
         String continuarComprando;
         Cliente cliente;
         Articulo articulo;
-        Empleado empleado;
-       
+        GestionArticulos articulos;
+
     public Venta (int codVenta,int cantidad,int cantidadMinima,int descuentoPorcentaje, Articulo articulo){
         this.codVenta = codVenta;
         this.cantidad = cantidad;
