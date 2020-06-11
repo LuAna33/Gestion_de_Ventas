@@ -7,20 +7,12 @@
         Scanner reader = new Scanner(System.in);
         Scanner reader1 = new Scanner(System.in);
         
-        int preciounit;
-        int cantidadMinima;
-        int cantidad ;
-        int descuentoPorcentaje;
         int continuarComprando;
-        int codVenta;
-        int dni;
-        int codArt;
-        String nombreArticulo=""; 
-        String nombreCliente="";
-       
+        
+        Venta venta1;       
         Articulo articulo1;
         Cliente cliente1;
-        Venta venta1;
+        
         TipoCliente tipoCliente;
                 
        System.out.println (" Si desea realizar una venta ingrese 1 ");
@@ -29,9 +21,8 @@
        while (continuarComprando == 1){
              
           cliente1 = entradaCliente(reader, reader1);
-          articulo1 = entradaArticulo(reader, reader1);
-          venta1 = entradaVenta(reader, articulo1);
-          procesarVenta(venta1, articulo1, cliente1);
+          venta1 = entradaVenta(reader);
+          procesarVenta(venta1, cliente1);
                
           System.out.println (" Si desea realizar otra venta ingrese 1 ");
           continuarComprando= reader.nextInt();   
@@ -48,54 +39,43 @@
        String nombre;
        TipoCliente tipoCliente= TipoCliente.MAYORISTA;
         
-       System.out.println("<<<<<<<Ingresar el DNI del cliente>>>>>>>>");
+       System.out.println("<<<<Ingresar el DNI del cliente>>>>");
        dni = reader.nextInt();
                       
-       System.out.println ("<<<<<<<Ingresar el nombre del cliente>>>>>>");
+       System.out.println ("<<<<<Ingresar el nombre del cliente>>>>");
        nombre = reader1.nextLine();
                      
        return new Cliente (nombre,dni, tipoCliente);
     }
     
-    public static Articulo entradaArticulo(Scanner reader, Scanner reader1){
-       int codArt;
-       String nombreArticulo;
-       int preciounit;
-       
-       System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
-       codArt= reader.nextInt();
-       
-       System.out.println ("<<<<<Ingresar el nombre del articulo>>>>>>");
-       nombreArticulo = reader1.nextLine();
-       
-       System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
-       preciounit = reader.nextInt();
-       return new Articulo (nombreArticulo,codArt, preciounit);
-    }
-    
-    public static Venta entradaVenta(Scanner reader,Articulo articulo1){   
+        
+    public static Venta entradaVenta(Scanner reader){   
        int codVenta;
-       int cantidad;
+       int cantidadArticulos;
        int cantidadMinima;
        int descuentoPorcentaje;
-       
+              
        System.out.println("<<<<<<<<< Por favor ingresar el Codigo de venta>>>>>>>>");
        codVenta = reader.nextInt(); 
        
        System.out.println ("<<<<<<<Ingrese la cantidad de articulos>>>>>>");
-       cantidad = reader.nextInt(); 
+       cantidadArticulos = reader.nextInt(); 
+       
+       GestionArticulos gestionArticulos = new GestionArticulos(cantidadArticulos);
        
        System.out.println("<<<<<<<Ingrese la cantidad minima para aplicar descuento por cantidad de productos comprados>>>>>>");
        cantidadMinima = reader.nextInt();
        
        System.out.println("<<<<<<<Ingrese el Porcentaje a aplicar del descuento por cantidad>>>>>>");
        descuentoPorcentaje = reader.nextInt();
-       return new Venta (codVenta, cantidad, cantidadMinima, descuentoPorcentaje, articulo1);
+       return new Venta (codVenta, cantidadArticulos, cantidadMinima, descuentoPorcentaje, gestionArticulos);
     } 
     
-    public static void procesarVenta (Venta venta1, Articulo articulo1,Cliente cliente1){
+    public static void procesarVenta (Venta venta1,Cliente cliente1){
+       
+       UIVentas ventaUI = new UIVentas(venta1.getGestionArticulos());  
        venta1.setCliente(cliente1);
-       venta1.setArticulo(articulo1);
+       ventaUI.seleccionarOpcion();
        venta1.imprimirVenta();
     }
 }  

@@ -11,7 +11,7 @@ public class Articulo{
     }
     
      public String toString(){
-        return  "  Nombre  "  + nombreArticulo + "  Codigo  "  +   codArt   + " Precio Unitario "+ preciounit; 
+        return  "NOMBRE  "  + nombreArticulo + "  CODIGO  "  +   codArt   + " PRECIO UNITARIO "+ preciounit; 
     }
     
     int getCodArt(){

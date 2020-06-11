@@ -2,106 +2,109 @@
 
 public class Venta { 
         int codVenta;
-        int cantidad;
+        int cantidadUnidades;
         int cantidadMinima;
         int descuentoPorcentaje;
         String continuarComprando;
         Cliente cliente;
-        Articulo articulo;
-        GestionArticulos articulos;
-       
-    public Venta (int codVenta,int cantidad,int cantidadMinima,int descuentoPorcentaje, Articulo articulo){
+        GestionArticulos gestionArticulos;
+        
+        
+    public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuentoPorcentaje, GestionArticulos gestionArticulos){
         this.codVenta = codVenta;
-        this.cantidad = cantidad;
+        this.cantidadUnidades = cantidadUnidades;
         this.cantidadMinima = cantidadMinima;
         this.descuentoPorcentaje = descuentoPorcentaje;
-        this.articulo = articulo;
+        this.gestionArticulos = gestionArticulos;
+       
     }
                        
-      int calcularPrecioCantidad(){
-           return cantidad * this.getArticulo().getPreciounit();       
-      }
+    int calcularPrecioCantidad(){
+           //return cantidadUnidades * this.getGestionArticulos().getEntradaArticulo().getPreciounit();  
+           return 1;
+    }
     
-      int calcularDescuentoCantidad (){
+    int calcularDescuentoCantidad (){
             return calcularPrecioCantidad() * descuentoPorcentaje / 100;
-      }
+    }
     
-      int calcularPrecioFinal (){
+     int calcularPrecioFinal (){
            int precioCantidad = calcularPrecioCantidad();
            int descuentoCantidad = calcularDescuentoCantidad(); 
            
-           if (cantidad >= cantidadMinima){
+           if (cantidadUnidades >= cantidadMinima){
               return precioCantidad - descuentoCantidad;
            }
            else{
               return precioCantidad;
            }       
-      }
-    
-    
-      Cliente getCliente(){
+    }
+        
+    Cliente getCliente(){
             return cliente;
-      }
+    }
     
-      void setCliente(Cliente cliente){
+    void setCliente(Cliente cliente){
            this.cliente = cliente;
-      }
+    }
    
-      Articulo getArticulo(){
-            return articulo;
-      }
+    GestionArticulos getGestionArticulos(){
+            return gestionArticulos;
+    }
    
-      void setArticulo (Articulo articulo){
-            this.articulo = articulo;
-      }
+    void setGestionArticulos (GestionArticulos gestionArticulos){
+            this.gestionArticulos = gestionArticulos;
+    }
     
-      int getCodVenta(){
+    int getCodVenta(){
             return codVenta;
-      }
+    }
          
-      void setCodVenta(int codVenta ){
+    void setCodVenta(int codVenta ){
             this.codVenta = codVenta;
-      }
+    }
          
-      int getCantidad(){
-            return cantidad;
-      }
+    int getCantidadUnidades(){
+            return cantidadUnidades;
+    }
     
-      void setCantidad (int cantidad){
-            this.cantidad = cantidad;  
-      }
+    void setCantidadUnidades (int cantidadUnidades){
+            this.cantidadUnidades = cantidadUnidades;  
+    }
            
-      int getCantidadMinima(){
+    int getCantidadMinima(){
         return cantidadMinima;
-      }
+    }
       
-      void setCantidadMinima(int cantidadMinima){
+    void setCantidadMinima(int cantidadMinima){
         this.cantidadMinima = cantidadMinima;
-      }
+    }
     
-      int getDescuentoPorcentaje (){
+    int getDescuentoPorcentaje (){
          return descuentoPorcentaje;
-      }
+    }
     
-      void setDescuentoPorcentaje (int descuentoPorcentaje){
+    void setDescuentoPorcentaje (int descuentoPorcentaje){
         this.descuentoPorcentaje = descuentoPorcentaje;
-      }
+    }
                   
     public void imprimirVenta (){
         
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DE LA VENTA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            System.out.println ("///El codigo de venta ingresado es N°" + getCodVenta() +"///");
-            System.out.println ("///La cantidad de articulos es..." + getCantidad() + "///");
-            System.out.println ("///La cantidad minima para acceder al descuento es..." + getCantidadMinima() + "///");
-            System.out.println ("///El porcentaje de descuento por cantidad es..." + getDescuentoPorcentaje() + "///");
-            System.out.println ("///El monto final es ///$" + calcularPrecioFinal()+ "///");
+            System.out.println ("///CODIGO DE VENTA " + getCodVenta() +"///");
+            System.out.println ("///CANTIDAD DE UNIDADES" + getCantidadUnidades() + "///");
+            System.out.println ("///DESCUENTO %" + getDescuentoPorcentaje() + "///");
+            System.out.println ("///MONTO FINAL///$" + calcularPrecioFinal()+ "///");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            getGestionArticulos().listarArticuloColeccion();
             getCliente().imprimirCliente();
-            getArticulo().imprimirArticulo();
-   }
+            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            //getGestionArticulos().imprimirGestionArticulos();
+    }
    
 }
 
