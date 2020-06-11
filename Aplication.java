@@ -1,4 +1,5 @@
 
+
  import java.util.Scanner;
  public class Aplication { 
 
@@ -21,13 +22,16 @@
         Articulo articulo1;
         Cliente cliente1;
         Venta venta1;
+        Empleado empleado1;
         TipoCliente tipoCliente;
-                
-       System.out.println (" Si desea realizar una venta ingrese 1 ");
-       continuarComprando= reader.nextInt(); 
+        PuestoEmpleado puestoEmpleado;        
+      
+        System.out.println (" PARA REALIZAR UNA VENTA INGRESAR 1 ");
+         continuarComprando= reader.nextInt(); 
       
        while (continuarComprando == 1){
              
+
           cliente1 = entradaCliente(reader, reader1);
           articulo1 = entradaArticulo(reader, reader1);
           venta1 = entradaVenta(reader, articulo1);
@@ -65,38 +69,54 @@
        System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
        codArt= reader.nextInt();
        
-       System.out.println ("<<<<<Ingresar el nombre del articulo>>>>>>");
+       System.out.println ("<<<<<Ingresar nombre del articulo>>>>>>");
        nombreArticulo = reader1.nextLine();
        
-       System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
+       System.out.println ("<<<<<<Ingresar precio por unidad del articulo>>>>>>");
        preciounit = reader.nextInt();
        return new Articulo (nombreArticulo,codArt, preciounit);
     }
     
+    public static Empleado entradaEmpleado(Scanner reader, Scanner reader1){
+        int dni;
+        String nombre;
+        PuestoEmpleado puestoEmpleado= PuestoEmpleado.VENDEDOR;
+        
+        System.out.println("<<<<<<<Ingresar DNI del Empleado >>>>>>>>");
+        dni = reader.nextInt();
+                      
+        System.out.println ("<<<<<<<Ingresar nombre del Empleado>>>>>>");
+        nombre = reader1.nextLine();
+                            
+        return new Empleado (nombre,dni, puestoEmpleado);
+    }
+    
     public static Venta entradaVenta(Scanner reader,Articulo articulo1){   
-       int codVenta;
-       int cantidad;
-       int cantidadMinima;
-       int descuentoPorcentaje;
+        int codVenta;
+        int cantidad;
+        int cantidadMinima;
+        int descuentoPorcentaje;
        
-       System.out.println("<<<<<<<<< Por favor ingresar el Codigo de venta>>>>>>>>");
-       codVenta = reader.nextInt(); 
+        System.out.println("<<<<<<<<< Ingresar Codigo de venta>>>>>>>>");
+         codVenta = reader.nextInt(); 
        
-       System.out.println ("<<<<<<<Ingrese la cantidad de articulos>>>>>>");
-       cantidad = reader.nextInt(); 
+        System.out.println ("<<<<<<<Ingresar cantidad de articulos>>>>>>");
+         cantidad = reader.nextInt(); 
        
-       System.out.println("<<<<<<<Ingrese la cantidad minima para aplicar descuento por cantidad de productos comprados>>>>>>");
-       cantidadMinima = reader.nextInt();
+        System.out.println("<<<<<<<Ingresar cantidad minima para aplicar descuento por cantidad de productos comprados>>>>>>");
+         cantidadMinima = reader.nextInt();
        
-       System.out.println("<<<<<<<Ingrese el Porcentaje a aplicar del descuento por cantidad>>>>>>");
-       descuentoPorcentaje = reader.nextInt();
-       return new Venta (codVenta, cantidad, cantidadMinima, descuentoPorcentaje, articulo1);
+        System.out.println("<<<<<<<Ingresar Porcentaje a aplicar del descuento por cantidad>>>>>>");
+         descuentoPorcentaje = reader.nextInt();
+         return new Venta (codVenta, cantidad, cantidadMinima, descuentoPorcentaje, articulo1);
     } 
     
+
     public static void procesarVenta (Venta venta1, Articulo articulo1,Cliente cliente1){
        venta1.setCliente(cliente1);
        venta1.setArticulo(articulo1);
        venta1.imprimirVenta();
+
     }
 }  
  
