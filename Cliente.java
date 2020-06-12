@@ -8,7 +8,7 @@ public class Cliente extends Persona{
     }
     
     public String toString(){
-        return " nombre = " + nombre + " dni " + dni + " tipoCliente " + tipoCliente; 
+        return " nombre   " + nombre + " dni " + dni + " tipoCliente " + tipoCliente; 
     }
   
      public void mostrarTipoCliente(){
@@ -28,9 +28,9 @@ public class Cliente extends Persona{
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DEL CLIENTE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         
-        System.out.println ("/// Nombre del Cliente ..." + nombre);
-        System.out.println ("/// DNI del Cliente ... " + dni);
-        System.out.println ("/// Tipo de Cliente ..." + tipoCliente);
+        System.out.println ("///CLIENTE" + nombre);
+        System.out.println ("///DNI " + dni);
+        System.out.println ("/// TIPO DE CLIENTE" + tipoCliente);
 
     }
 }

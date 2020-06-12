@@ -2,14 +2,34 @@
 import java.util.Scanner;
 public class GestionArticulos {
         
-        Articulo[]articuloColeccion = {null, null, null, null };
-                   
+
+    Articulo[] articuloColeccion;
+        
+    public GestionArticulos (int cantidadArticulos){
+        articuloColeccion = new Articulo [cantidadArticulos];
+       
+    }
+   
+    public int cantidadArticulos (){
+        
+        int cantidadArticulos = 0;
+        
+        for (int i = 0; i < articuloColeccion.length; i++){
+            if (articuloColeccion[i] == null){
+                  System.out.println (articuloColeccion [i]);
+                  cantidadArticulos++;
+            }
+        }
+        return cantidadArticulos;
+    }
+    
+
     public void listarArticuloColeccion(){ 
         
          for (int i = 0; i < articuloColeccion.length; i++){
            if (articuloColeccion[i] != null){
-              System.out.println (articuloColeccion[i]);//no imprimir nulls - to string para ver el detalle del articulo
-          
+              System.out.println ("POSICION DEL ARTICULO:" + i );
+              System.out.println(articuloColeccion[i]);//no imprimir nulls - to string para ver el detalle del articulo
            } 
          }
     }
@@ -26,14 +46,14 @@ public class GestionArticulos {
     public boolean  agregarArticulo(Articulo nuevoArticulo){
         
         for (int i = 0; i < articuloColeccion.length; i++){//idem eliminar
-                     
+
            if(articuloColeccion[i] == null){ 
                articuloColeccion[i] = nuevoArticulo;
                return true;
-           } 
+           }
         }
         return false;
-    }     
+    }
     
     public boolean eliminarArticulo(int posicion){
         boolean a = false;
@@ -55,28 +75,25 @@ public class GestionArticulos {
         return a;
     }
      
-    public int espacioDisponible (){
+    public boolean espacioDisponible (){
         
-        int espacioLibre = 0;
-        
-        for (int i = 0; i < articuloColeccion.length; i++){
+        boolean a = false;
+                
+       for (int i = 0; i < articuloColeccion.length; i++){
             if (articuloColeccion[i] == null){
-                espacioLibre++;
+            a = true;  
             }
-        }
-        return  espacioLibre;
+       }
+       return a;
     }
     
-    public int cantidadArticulos (){
+    public boolean posicionEncontrada(int posicion){
+        boolean a = false;
         
-        int cantidadArticulos = 0;
-        
-        for (int i = 0; i < articuloColeccion.length; i++){
-            if (articuloColeccion[i] != null){
-                  System.out.println (articuloColeccion [i]);
-                  cantidadArticulos++;
-            }
-        }
-        return  cantidadArticulos;
-    } 
-}    
+        if (posicion <= articuloColeccion.length){
+            a = true;
+        } 
+        return a;
+    }    
+}
+
