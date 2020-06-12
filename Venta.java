@@ -9,8 +9,8 @@ public class Venta {
         Cliente cliente;
         GestionArticulos gestionArticulos;
         
-        
-    public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuentoPorcentaje, GestionArticulos gestionArticulos){
+public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuentoPorcentaje, GestionArticulos gestionArticulos){
+
         this.codVenta = codVenta;
         this.cantidadUnidades = cantidadUnidades;
         this.cantidadMinima = cantidadMinima;
@@ -55,7 +55,7 @@ public class Venta {
     void setGestionArticulos (GestionArticulos gestionArticulos){
             this.gestionArticulos = gestionArticulos;
     }
-    
+         
     int getCodVenta(){
             return codVenta;
     }
@@ -105,8 +105,7 @@ public class Venta {
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             //getGestionArticulos().imprimirGestionArticulos();
     }
-   
-}
+
 
   
     

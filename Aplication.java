@@ -6,19 +6,17 @@
                      
         Scanner reader = new Scanner(System.in);
         Scanner reader1 = new Scanner(System.in);
-        
         int continuarComprando;
         
         Venta venta1;       
-        Articulo articulo1;
         Cliente cliente1;
         TipoCliente tipoCliente;
-                
-       System.out.println (" Si desea realizar una venta ingrese 1 ");
-       continuarComprando= reader.nextInt(); 
+      
+        System.out.println ("  Si desea realizar una venta ingrese 1");
+        continuarComprando= reader.nextInt(); 
       
        while (continuarComprando == 1){
-             
+
           cliente1 = entradaCliente(reader, reader1);
           venta1 = entradaVenta(reader);
           procesarVenta(venta1, cliente1);
@@ -30,8 +28,6 @@
        if  (continuarComprando != 1){
            System.out.println("Fin del Programa");
        }
-      
-    }
         
     public static Cliente entradaCliente(Scanner reader, Scanner reader1){
        int dni;
@@ -61,7 +57,8 @@
         return new Empleado (nombre,dni, puestoEmpleado);
     }
     
-    public static Venta entradaVenta(Scanner reader){   
+   public static Venta entradaVenta(Scanner reader){   
+
        int codVenta;
        int cantidadArticulos;
        int cantidadMinima;
@@ -90,8 +87,8 @@
        ventaUI.seleccionarOpcion();
        venta1.imprimirVenta();
     }
-}  
- 
+
+    
        
     
         

@@ -1,5 +1,6 @@
 
  import java.util.Scanner;
+
   public class  UIVentas{
      
        GestionArticulos gestionArticulos;
@@ -20,6 +21,7 @@
                
            Scanner reader = new Scanner (System.in);
            int opcion = reader.nextInt();
+
           while (opcion < 5){ 
              switch (opcion){
                
@@ -94,7 +96,6 @@
                    System.out.println ("Ingresar 5 para Finalizar");
                        
                    opcion = reader.nextInt();
-                   
           }
                 System.out.println (" Fin");
       }
@@ -114,9 +115,22 @@
               preciounit = reader.nextInt();
               return new Articulo (nombreArticulo,codArt, preciounit);
        }
-            
+
+       public static Articulo entradaArticulo(Scanner reader, Scanner reader1){
+               int codArt;
+               String nombreArticulo;
+               int preciounit;
+           
+               System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
+               codArt= reader.nextInt();
+               
+               System.out.println ("<<<<<Ingresar el nombre del articulo>>>>>>");
+               nombreArticulo = reader1.nextLine();
+               
+               System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
+               preciounit = reader.nextInt();
+               return new Articulo (nombreArticulo,codArt, preciounit);
+        }
    }    
-    
-
-
+   
     
