@@ -2,7 +2,8 @@
 import java.util.Scanner;
 public class GestionArticulos {
         
-        Articulo[] articuloColeccion;
+
+    Articulo[] articuloColeccion;
         
     public GestionArticulos (int cantidadArticulos){
         articuloColeccion = new Articulo [cantidadArticulos];
@@ -22,13 +23,13 @@ public class GestionArticulos {
         return cantidadArticulos;
     }
     
+
     public void listarArticuloColeccion(){ 
         
          for (int i = 0; i < articuloColeccion.length; i++){
            if (articuloColeccion[i] != null){
               System.out.println ("POSICION DEL ARTICULO:" + i );
               System.out.println(articuloColeccion[i]);//no imprimir nulls - to string para ver el detalle del articulo
-              
            } 
          }
     }
@@ -45,6 +46,7 @@ public class GestionArticulos {
     public boolean  agregarArticulo(Articulo nuevoArticulo){
         
         for (int i = 0; i < articuloColeccion.length; i++){//idem eliminar
+
            if(articuloColeccion[i] == null){ 
                articuloColeccion[i] = nuevoArticulo;
                return true;
@@ -94,3 +96,4 @@ public class GestionArticulos {
         return a;
     }    
 }
+

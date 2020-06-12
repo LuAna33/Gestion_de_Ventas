@@ -11,6 +11,7 @@ public class Articulo{
     }
     
      public String toString(){
+
         return  "NOMBRE  "  + nombreArticulo + "  CODIGO  "  +   codArt   + " PRECIO UNITARIO "+ preciounit; 
     }
     

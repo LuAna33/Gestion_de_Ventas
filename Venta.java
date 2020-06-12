@@ -9,8 +9,8 @@ public class Venta {
         Cliente cliente;
         GestionArticulos gestionArticulos;
         
-        
-    public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuentoPorcentaje, GestionArticulos gestionArticulos){
+public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuentoPorcentaje, GestionArticulos gestionArticulos){
+
         this.codVenta = codVenta;
         this.cantidadUnidades = cantidadUnidades;
         this.cantidadMinima = cantidadMinima;
@@ -52,10 +52,11 @@ public class Venta {
             return gestionArticulos;
     }
    
+
     void setGestionArticulos (GestionArticulos gestionArticulos){
             this.gestionArticulos = gestionArticulos;
     }
-    
+         
     int getCodVenta(){
             return codVenta;
     }
@@ -93,6 +94,7 @@ public class Venta {
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DE LA VENTA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
             System.out.println ("///CODIGO DE VENTA " + getCodVenta() +"///");
             System.out.println ("///CANTIDAD DE UNIDADES" + getCantidadUnidades() + "///");
             System.out.println ("///DESCUENTO %" + getDescuentoPorcentaje() + "///");
@@ -105,6 +107,7 @@ public class Venta {
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             //getGestionArticulos().imprimirGestionArticulos();
     }
+
    
 }
 

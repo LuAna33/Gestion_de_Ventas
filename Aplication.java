@@ -6,20 +6,18 @@
                      
         Scanner reader = new Scanner(System.in);
         Scanner reader1 = new Scanner(System.in);
-        
         int continuarComprando;
         
         Venta venta1;       
         Articulo articulo1;
         Cliente cliente1;
-        
         TipoCliente tipoCliente;
-                
-       System.out.println (" Si desea realizar una venta ingrese 1 ");
-       continuarComprando= reader.nextInt(); 
+      
+        System.out.println ("  Si desea realizar una venta ingrese 1");
+        continuarComprando= reader.nextInt(); 
       
        while (continuarComprando == 1){
-             
+           
           cliente1 = entradaCliente(reader, reader1);
           venta1 = entradaVenta(reader);
           procesarVenta(venta1, cliente1);
@@ -31,7 +29,6 @@
        if  (continuarComprando != 1){
            System.out.println("Fin del Programa");
        }
-      
     }
         
     public static Cliente entradaCliente(Scanner reader, Scanner reader1){
@@ -48,8 +45,21 @@
        return new Cliente (nombre,dni, tipoCliente);
     }
     
+   public static Empleado entradaEmpleado(Scanner reader, Scanner reader1){
+        int dni;
+        String nombre;
+        PuestoEmpleado puestoEmpleado= PuestoEmpleado.VENDEDOR;
         
-    public static Venta entradaVenta(Scanner reader){   
+        System.out.println("<<<<<<<Ingresar DNI del Empleado >>>>>>>>");
+        dni = reader.nextInt();
+                      
+        System.out.println ("<<<<<<<Ingresar nombre del Empleado>>>>>>");
+        nombre = reader1.nextLine();
+                            
+        return new Empleado (nombre,dni, puestoEmpleado);
+    }
+    
+   public static Venta entradaVenta(Scanner reader){   
        int codVenta;
        int cantidadArticulos;
        int cantidadMinima;
@@ -70,14 +80,15 @@
        descuentoPorcentaje = reader.nextInt();
        return new Venta (codVenta, cantidadArticulos, cantidadMinima, descuentoPorcentaje, gestionArticulos);
     } 
-    
+       
     public static void procesarVenta (Venta venta1,Cliente cliente1){
        
        UIVentas ventaUI = new UIVentas(venta1.getGestionArticulos());  
        venta1.setCliente(cliente1);
        ventaUI.seleccionarOpcion();
        venta1.imprimirVenta();
-    }
+        
+    } 
 }  
  
        
