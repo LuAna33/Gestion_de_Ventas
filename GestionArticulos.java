@@ -2,12 +2,11 @@
 import java.util.Scanner;
 public class GestionArticulos {
         
-
     Articulo[] articuloColeccion;
         
     public GestionArticulos (int cantidadArticulos){
         articuloColeccion = new Articulo [cantidadArticulos];
-       
+      
     }
    
     public int cantidadArticulos (){
@@ -22,7 +21,6 @@ public class GestionArticulos {
         }
         return cantidadArticulos;
     }
-    
 
     public void listarArticuloColeccion(){ 
         

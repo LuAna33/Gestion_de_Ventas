@@ -89,7 +89,6 @@
                    
                        break; 
               } 
-                  
                    System.out.println ("Ingresar 1 para Agregar un articulo");       
                    System.out.println ("Ingresar 2 para Eliminar un articulo");
                    System.out.println ("Ingresar 3 para Actualizar un articulo");
@@ -97,12 +96,26 @@
                    System.out.println ("Ingresar 5 para Finalizar");
                        
                    opcion = reader.nextInt();
-               
           }
                 System.out.println (" Fin");
       }
        
-      
+       public static  Articulo entradaArticulo(Scanner reader, Scanner reader1){
+              int codArt;
+              String nombreArticulo;
+              int preciounit;
+               
+              System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
+              codArt= reader.nextInt();
+                   
+              System.out.println ("<<<<<Ingresar el nombre del articulo>>>>>>");
+              nombreArticulo = reader1.nextLine();
+                   
+              System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
+              preciounit = reader.nextInt();
+              return new Articulo (nombreArticulo,codArt, preciounit);
+       }
+
        public static Articulo entradaArticulo(Scanner reader, Scanner reader1){
                int codArt;
                String nombreArticulo;
@@ -118,10 +131,6 @@
                preciounit = reader.nextInt();
                return new Articulo (nombreArticulo,codArt, preciounit);
         }
-
-            
    }    
-    
-
-
+   
     

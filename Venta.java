@@ -52,7 +52,6 @@ public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuento
             return gestionArticulos;
     }
    
-
     void setGestionArticulos (GestionArticulos gestionArticulos){
             this.gestionArticulos = gestionArticulos;
     }
@@ -94,7 +93,6 @@ public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuento
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DETALLE DE LA VENTA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-
             System.out.println ("///CODIGO DE VENTA " + getCodVenta() +"///");
             System.out.println ("///CANTIDAD DE UNIDADES" + getCantidadUnidades() + "///");
             System.out.println ("///DESCUENTO %" + getDescuentoPorcentaje() + "///");
@@ -108,8 +106,6 @@ public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuento
             //getGestionArticulos().imprimirGestionArticulos();
     }
 
-   
-}
 
   
     
