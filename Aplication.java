@@ -12,7 +12,6 @@
         Venta venta1;       
         Articulo articulo1;
         Cliente cliente1;
-        
         TipoCliente tipoCliente;
                 
        System.out.println (" Si desea realizar una venta ingrese 1 ");
@@ -48,7 +47,20 @@
        return new Cliente (nombre,dni, tipoCliente);
     }
     
+     public static Empleado entradaEmpleado(Scanner reader, Scanner reader1){
+        int dni;
+        String nombre;
+        PuestoEmpleado puestoEmpleado= PuestoEmpleado.VENDEDOR;
         
+        System.out.println("<<<<<<<Ingresar DNI del Empleado >>>>>>>>");
+        dni = reader.nextInt();
+     
+        System.out.println ("<<<<<<<Ingresar nombre del Empleado>>>>>>");
+        nombre = reader1.nextLine();
+                            
+        return new Empleado (nombre,dni, puestoEmpleado);
+    }
+    
     public static Venta entradaVenta(Scanner reader){   
        int codVenta;
        int cantidadArticulos;
