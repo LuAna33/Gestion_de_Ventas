@@ -60,7 +60,7 @@
                           }
                        }
                        else{
-                          System.out.println("POSICION INCORRECTA. Las posiciones existentes van de 0 a " + gestionArticulos.articuloColeccion.length );
+                          System.out.println("POSICION INCORRECTA. Las posiciones existentes son " +gestionArticulos.articuloColeccion.length + " iniciando en 0" );
                         }
                        break;
                 
@@ -79,7 +79,7 @@
                            }
                        }    
                        else{
-                          System.out.println("POSICION INCORRECTA. Las posiciones existentes van de 0 a " + articuloColeccion.length );
+                          System.out.println("POSICION INCORRECTA. Las posiciones existentes son " +gestionArticulos.articuloColeccion.length + " iniciando en 0");
                        }   
                        break;
                     
@@ -100,7 +100,7 @@
                 System.out.println (" Fin");
       }
        
-       public static  Articulo entradaArticulo(Scanner reader, Scanner reader1){
+      public static  Articulo entradaArticulo(Scanner reader, Scanner reader1){
               int codArt;
               String nombreArticulo;
               int preciounit;
@@ -114,23 +114,8 @@
               System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
               preciounit = reader.nextInt();
               return new Articulo (nombreArticulo,codArt, preciounit);
-       }
+      }
 
-       public static Articulo entradaArticulo(Scanner reader, Scanner reader1){
-               int codArt;
-               String nombreArticulo;
-               int preciounit;
-           
-               System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
-               codArt= reader.nextInt();
-               
-               System.out.println ("<<<<<Ingresar el nombre del articulo>>>>>>");
-               nombreArticulo = reader1.nextLine();
-               
-               System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
-               preciounit = reader.nextInt();
-               return new Articulo (nombreArticulo,codArt, preciounit);
-        }
    }    
    
     

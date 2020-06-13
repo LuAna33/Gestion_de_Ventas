@@ -9,14 +9,14 @@ public class VentaTest{
     
     Venta venta1;
     Venta venta2;
-    Articulo articulo1;
-    Articulo articulo2;
+    GestionArticulos gestionArticulos1;
+    GestionArticulos gestionArticulos2;
     @Before
     public void setUp(){
         Articulo articulo1 = new Articulo ( "Carpeta", 1523, 10);
         Articulo articulo2 = new Articulo ( "Carpeta", 1524, 10);
-        venta1= new Venta(123, 100,1 ,10, articulo1);
-        venta2= new Venta(123, 100, 200,10, articulo2);
+        venta1= new Venta(123, 100,1 ,10, gestionArticulos1);
+        venta2= new Venta(123, 100, 200,10, gestionArticulos1);
     }  
     
     @Test
