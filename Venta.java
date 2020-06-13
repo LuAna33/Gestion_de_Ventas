@@ -105,7 +105,7 @@ public Venta (int codVenta,int cantidadUnidades,int cantidadMinima,int descuento
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             //getGestionArticulos().imprimirGestionArticulos();
     }
-
+}
 
   
     

@@ -28,7 +28,8 @@
        if  (continuarComprando != 1){
            System.out.println("Fin del Programa");
        }
-        
+    }    
+    
     public static Cliente entradaCliente(Scanner reader, Scanner reader1){
        int dni;
        String nombre;
@@ -43,7 +44,7 @@
        return new Cliente (nombre,dni, tipoCliente);
     }
     
-     public static Empleado entradaEmpleado(Scanner reader, Scanner reader1){
+    public static Empleado entradaEmpleado(Scanner reader, Scanner reader1){
         int dni;
         String nombre;
         PuestoEmpleado puestoEmpleado= PuestoEmpleado.VENDEDOR;
@@ -87,7 +88,7 @@
        ventaUI.seleccionarOpcion();
        venta1.imprimirVenta();
     }
-
+}
     
        
     
