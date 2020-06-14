@@ -29,9 +29,9 @@
                       System.out.println ("Agregar un Articulo");
                                                                                     
                       if (gestionArticulos.espacioDisponible()){
-                         Articulo entradaArticulo = entradaArticulo(new Scanner(System.in), new Scanner(System.in));
+                         ArticuloVenta entradaArticuloVenta = entradaArticuloVenta(new Scanner(System.in), new Scanner(System.in));
                         
-                         if(gestionArticulos.agregarArticulo (entradaArticulo)){
+                         if(gestionArticulos.agregarArticulo (entradaArticuloVenta)){
                         
                             System.out.println("Se agrego el articulo");
                          }
@@ -69,9 +69,9 @@
                        posicion = reader.nextInt();
                        
                        if (gestionArticulos.posicionEncontrada(posicion)){
-                           Articulo entradaArticulo = entradaArticulo(new Scanner(System.in), new Scanner(System.in));
+                           ArticuloVenta entradaArticuloVenta = entradaArticuloVenta(new Scanner(System.in), new Scanner(System.in));
                          
-                           if (gestionArticulos.actualizarArticulo(posicion, entradaArticulo)){
+                           if (gestionArticulos.actualizarArticulo(posicion, entradaArticuloVenta)){
                                System.out.println ("El articulo ha sido actualizado");
                            }
                            else{
@@ -100,11 +100,14 @@
                 System.out.println (" Fin");
       }
        
-      public static  Articulo entradaArticulo(Scanner reader, Scanner reader1){
+      public static  ArticuloVenta entradaArticuloVenta(Scanner reader, Scanner reader1){
               int codArt;
               String nombreArticulo;
               int preciounit;
-               
+              int cantidad;
+              int cantidadMinima;
+              int descuentoPorcentaje;
+              
               System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
               codArt= reader.nextInt();
                    
@@ -113,7 +116,16 @@
                    
               System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
               preciounit = reader.nextInt();
-              return new Articulo (nombreArticulo,codArt, preciounit);
+              
+              System.out.println ("<<<<<<Ingresar cantidad de Unidades por Articulo>>>>>>");
+              cantidad= reader.nextInt();
+              
+              System.out.println("<<<<<<<Ingrese la cantidad minima para aplicar descuento por cantidad de productos comprados>>>>>>");
+              cantidadMinima = reader.nextInt();
+       
+              System.out.println("<<<<<<<Ingrese el Porcentaje a aplicar del descuento por cantidad>>>>>>");
+              descuentoPorcentaje = reader.nextInt();
+              return new ArticuloVenta (nombreArticulo, codArt, preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
       }
 
    }    

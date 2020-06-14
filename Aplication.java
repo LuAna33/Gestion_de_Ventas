@@ -1,8 +1,9 @@
 
  import java.util.Scanner;
  public class Aplication { 
-
-    public static void main (String [] args) { 
+     
+    
+     public static void main (String [] args) { 
                      
         Scanner reader = new Scanner(System.in);
         Scanner reader1 = new Scanner(System.in);
@@ -11,6 +12,7 @@
         Venta venta1;       
         Cliente cliente1;
         TipoCliente tipoCliente;
+        
       
         System.out.println ("  Si desea realizar una venta ingrese 1");
         continuarComprando= reader.nextInt(); 
@@ -19,8 +21,9 @@
 
           cliente1 = entradaCliente(reader, reader1);
           venta1 = entradaVenta(reader);
+          //articuloVenta1 = entradaArticuloVenta(reader);
+          
           procesarVenta(venta1, cliente1);
-               
           System.out.println (" Si desea realizar otra venta ingrese 1 ");
           continuarComprando= reader.nextInt();   
        }  
@@ -58,13 +61,11 @@
         return new Empleado (nombre,dni, puestoEmpleado);
     }
     
-   public static Venta entradaVenta(Scanner reader){   
+    public static Venta entradaVenta(Scanner reader){   
 
        int codVenta;
        int cantidadArticulos;
-       int cantidadMinima;
-       int descuentoPorcentaje;
-              
+                   
        System.out.println("<<<<<<<<< Por favor ingresar el Codigo de venta>>>>>>>>");
        codVenta = reader.nextInt(); 
        
@@ -73,12 +74,7 @@
        
        GestionArticulos gestionArticulos = new GestionArticulos(cantidadArticulos);
        
-       System.out.println("<<<<<<<Ingrese la cantidad minima para aplicar descuento por cantidad de productos comprados>>>>>>");
-       cantidadMinima = reader.nextInt();
-       
-       System.out.println("<<<<<<<Ingrese el Porcentaje a aplicar del descuento por cantidad>>>>>>");
-       descuentoPorcentaje = reader.nextInt();
-       return new Venta (codVenta, cantidadArticulos, cantidadMinima, descuentoPorcentaje, gestionArticulos);
+       return new Venta (codVenta, gestionArticulos);
     } 
     
     public static void procesarVenta (Venta venta1,Cliente cliente1){
@@ -87,6 +83,7 @@
        venta1.setCliente(cliente1);
        ventaUI.seleccionarOpcion();
        venta1.imprimirVenta();
+       //articuloVenta1.imprimirArticuloVenta();
     }
 }
     
