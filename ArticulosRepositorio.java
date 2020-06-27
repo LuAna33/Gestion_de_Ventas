@@ -1,10 +1,10 @@
 
 import java.util.Scanner;
-public class GestionArticulos {
+public class ArticulosRepositorio {
         
     Articulo[] articuloColeccion;
         
-    public GestionArticulos (int cantidadArticulos){
+    public ArticulosRepositorio (int cantidadArticulos){
         articuloColeccion = new Articulo [cantidadArticulos];
       
     }
