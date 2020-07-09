@@ -3,14 +3,13 @@ public class ArticuloVenta extends Articulo{
   
      int cantidad;
      int cantidadMinima;
-     int descuentoPorcentaje; 
-     
-    public ArticuloVenta (String nombreArticulo, int codArt, int preciounit,int cantidad,int cantidadMinima,int descuentoPorcentaje ){
+     double descuentoPorcentaje;
+          
+    public  ArticuloVenta (String nombreArticulo, int codArt, double preciounit,int cantidad, int cantidadMinima, double descuentoPorcentaje ){
         super(nombreArticulo,codArt,preciounit);
         this.cantidad = cantidad;
         this.cantidadMinima = cantidadMinima;
         this.descuentoPorcentaje = descuentoPorcentaje;
-        
     }  
     
     public String toString(){
@@ -26,47 +25,19 @@ public class ArticuloVenta extends Articulo{
         this.cantidad = cantidad;
     }
     
-    int calcularPrecioCantidad(){
-           return this.cantidad * this.getPreciounit();  
-    }   
-        
-    int calcularDescuentoCantidad (){
-            return calcularPrecioCantidad() * descuentoPorcentaje / 100;
+    public int getCantidadMinima(){
+          return cantidadMinima;
     }
     
-    int calcularPrecioFinal (){
-           int precioCantidad = calcularPrecioCantidad();
-           int descuentoCantidad = calcularDescuentoCantidad(); 
-           
-           if (cantidad >= cantidadMinima){
-              return precioCantidad - descuentoCantidad;
-           }
-           else{
-              return precioCantidad;
-           }       
-    } 
-                  
-    int getCantidadMinima(){
-        return cantidadMinima;
-    }
-      
-    void setCantidadMinima(int cantidadMinima){
+     public void setCantidadMinima (int cantidadMinima){
         this.cantidadMinima = cantidadMinima;
     }
-    
-    int getDescuentoPorcentaje (){
-         return descuentoPorcentaje;
+    public double getDescuentoPorcentaje(){
+          return descuentoPorcentaje;
     }
     
-    void setDescuentoPorcentaje (int descuentoPorcentaje){
+     public void setDescuentoPorcentaje (double descuentoPorcentaje){
         this.descuentoPorcentaje = descuentoPorcentaje;
     }
     
-   public void imprimirArticuloVenta(){
-            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>");
-            System.out.println ("///CANTIDAD DE UNIDADES" + getCantidad() + "///");
-            System.out.println ("///DESCUENTO %" + getDescuentoPorcentaje() + "///");
-            System.out.println ("///MONTO FINAL///$" + calcularPrecioFinal()+ "///");
-            System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>");
-   }
-}
+}   

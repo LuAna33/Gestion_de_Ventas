@@ -12,8 +12,7 @@
         Venta venta1;       
         Cliente cliente1;
         TipoCliente tipoCliente;
-        
-      
+                
         System.out.println ("  Si desea realizar una venta ingrese 1");
         continuarComprando= reader.nextInt(); 
       
@@ -69,21 +68,21 @@
        System.out.println("<<<<<<<<< Por favor ingresar el Codigo de venta>>>>>>>>");
        codVenta = reader.nextInt(); 
        
-       System.out.println ("<<<<<<<Ingrese la cantidad de articulos>>>>>>");
+       System.out.println ("<<<<<<<Ingrese la cantidad de tipo de articulos>>>>>>");
        cantidadArticulos = reader.nextInt(); 
        
-       GestionArticulos gestionArticulos = new GestionArticulos(cantidadArticulos);
+       ArticulosRepositorio articulosRepositorio = new ArticulosRepositorio(cantidadArticulos);
        
-       return new Venta (codVenta, gestionArticulos);
+       return new Venta (codVenta, articulosRepositorio);
     } 
     
     public static void procesarVenta (Venta venta1,Cliente cliente1){
        
-       UIVentas ventaUI = new UIVentas(venta1.getGestionArticulos());  
+       UIVentas ventaUI = new UIVentas(venta1.getArticulosRepositorio());  
        venta1.setCliente(cliente1);
        ventaUI.seleccionarOpcion();
        venta1.imprimirVenta();
-       //articuloVenta1.imprimirArticuloVenta();
+       //.imprimirArticuloVenta();
     }
 }
     

@@ -1,14 +1,14 @@
 
  import java.util.Scanner;
 
-  public class  UIVentas{
+ public class  UIVentas{
      
-       GestionArticulos gestionArticulos;
+       ArticulosRepositorio articulosRepositorio;
        Articulo[] articuloColeccion;
       
        
-      public UIVentas(GestionArticulos gestionArticulos){
-           this.gestionArticulos = gestionArticulos;
+      public UIVentas(ArticulosRepositorio articulosRepositorio){
+           this.articulosRepositorio = articulosRepositorio;
       }
                
       public void seleccionarOpcion() { 
@@ -28,10 +28,10 @@
                 case 1: 
                       System.out.println ("Agregar un Articulo");
                                                                                     
-                      if (gestionArticulos.espacioDisponible()){
+                      if (articulosRepositorio.espacioDisponible()){
                          ArticuloVenta entradaArticuloVenta = entradaArticuloVenta(new Scanner(System.in), new Scanner(System.in));
                         
-                         if(gestionArticulos.agregarArticulo (entradaArticuloVenta)){
+                         if(articulosRepositorio.agregarArticulo (entradaArticuloVenta)){
                         
                             System.out.println("Se agrego el articulo");
                          }
@@ -50,9 +50,9 @@
                        System.out.println ("Eliminar un Articulo, ingresar posicion del mismo");
                        int posicion = reader.nextInt();                   
                        
-                       if (gestionArticulos.posicionEncontrada(posicion)){
+                       if (articulosRepositorio.posicionEncontrada(posicion)){
                            
-                          if (gestionArticulos.eliminarArticulo(posicion)){
+                          if (articulosRepositorio.eliminarArticulo(posicion)){
                              System.out.println("Se ha eliminado el articulo");
                           }
                           else{
@@ -60,7 +60,7 @@
                           }
                        }
                        else{
-                          System.out.println("POSICION INCORRECTA. Las posiciones existentes son " +gestionArticulos.articuloColeccion.length + " iniciando en 0" );
+                          System.out.println("POSICION INCORRECTA. Las posiciones existentes son " +articulosRepositorio.articuloColeccion.length + " iniciando en 0" );
                         }
                        break;
                 
@@ -68,10 +68,10 @@
                        System.out.println ("Actualizar un Articulo, ingrese la posicion del articulo que requiere actualizarse");
                        posicion = reader.nextInt();
                        
-                       if (gestionArticulos.posicionEncontrada(posicion)){
+                       if (articulosRepositorio.posicionEncontrada(posicion)){
                            ArticuloVenta entradaArticuloVenta = entradaArticuloVenta(new Scanner(System.in), new Scanner(System.in));
                          
-                           if (gestionArticulos.actualizarArticulo(posicion, entradaArticuloVenta)){
+                           if (articulosRepositorio.actualizarArticulo(posicion, entradaArticuloVenta)){
                                System.out.println ("El articulo ha sido actualizado");
                            }
                            else{
@@ -79,13 +79,13 @@
                            }
                        }    
                        else{
-                          System.out.println("POSICION INCORRECTA. Las posiciones existentes son " +gestionArticulos.articuloColeccion.length + " iniciando en 0");
+                          System.out.println("POSICION INCORRECTA. Las posiciones existentes son " +articulosRepositorio.articuloColeccion.length + " iniciando en 0");
                        }   
                        break;
                     
                 case 4:
                        System.out.println ("Listar Articulos");
-                       gestionArticulos.listarArticuloColeccion();
+                       articulosRepositorio.listarArticuloColeccion();
                    
                        break; 
               } 
@@ -100,13 +100,14 @@
                 System.out.println (" Fin");
       }
        
-      public static  ArticuloVenta entradaArticuloVenta(Scanner reader, Scanner reader1){
-              int codArt;
+      public  ArticuloVenta entradaArticuloVenta(Scanner reader, Scanner reader1){
+              
               String nombreArticulo;
-              int preciounit;
+              int codArt;
+              double preciounit;
               int cantidad;
               int cantidadMinima;
-              int descuentoPorcentaje;
+              double descuentoPorcentaje;
               
               System.out.println ("<<<<<<Ingresar numero de codigo del articulo>>>>>>");
               codArt= reader.nextInt();
@@ -115,7 +116,7 @@
               nombreArticulo = reader1.nextLine();
                    
               System.out.println ("<<<<<<Ingrese el precio por unidad del articulo>>>>>>");
-              preciounit = reader.nextInt();
+              preciounit = reader.nextDouble();
               
               System.out.println ("<<<<<<Ingresar cantidad de Unidades por Articulo>>>>>>");
               cantidad= reader.nextInt();
@@ -124,8 +125,8 @@
               cantidadMinima = reader.nextInt();
        
               System.out.println("<<<<<<<Ingrese el Porcentaje a aplicar del descuento por cantidad>>>>>>");
-              descuentoPorcentaje = reader.nextInt();
-              return new ArticuloVenta (nombreArticulo, codArt, preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
+              descuentoPorcentaje = reader.nextDouble();
+              return new ArticuloVenta (nombreArticulo,codArt, preciounit, cantidad, cantidadMinima, descuentoPorcentaje);
       }
 
    }    

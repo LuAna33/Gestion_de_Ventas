@@ -34,7 +34,6 @@ public class ArticulosRepositorioTest{
         }
         assertEquals(articuloEsperado, articuloPrueba);
     }
-   
     
     @Test
     public void getCantidadArticulosTest(){
@@ -51,10 +50,10 @@ public class ArticulosRepositorioTest{
         //Dado
         Articulo articuloEsperado = null;
         Articulo articuloPrueba = null;        
-        boolean articuloAgre= articulosRepositorio.agregarArticulo(articulo1);
+        boolean articuloAgregado= articulosRepositorio.agregarArticulo(articulo1);
         
         //When
-        if (articuloAgre){
+        if (articuloAgregado){
         boolean eliminado = articulosRepositorio.eliminarArticulo(0);
             if (eliminado){
                 articuloPrueba = articulosRepositorio.obtenerArticulo(0);
@@ -65,5 +64,18 @@ public class ArticulosRepositorioTest{
         assertNull(articuloPrueba);
     }
     
+    @Test
+    public void listarArticuloColeccionTest(){
+         //given
+         Articulo articuloEsperado = new Articulo("lapiz");
+         Articulo articuloPrueba = null; 
+         boolean articuloAgregado= articulosRepositorio.agregarArticulo(articulo1);
+         //when
+         if (articuloAgregado){
+           articuloPrueba = articulosRepositorio.obtenerArticulo(0);
+         }  
+         
+            
     
+    }
 }
