@@ -3,14 +3,15 @@ public class ArticuloVenta extends Articulo{
   
      int cantidad;
      int cantidadMinima;
-     int descuentoPorcentaje; 
-     
-    public ArticuloVenta (String nombreArticulo, int codArt, int preciounit,int cantidad,int cantidadMinima,int descuentoPorcentaje ){
+     double descuentoPorcentaje;
+          
+      public ArticuloVenta (String nombreArticulo, int codArt, double preciounit,int cantidad, int cantidadMinima, double descuentoPorcentaje ){
+
         super(nombreArticulo,codArt,preciounit);
         this.cantidad = cantidad;
         this.cantidadMinima = cantidadMinima;
         this.descuentoPorcentaje = descuentoPorcentaje;
-        
+
     }  
     
     public String toString(){
@@ -26,17 +27,17 @@ public class ArticuloVenta extends Articulo{
         this.cantidad = cantidad;
     }
     
-    int calcularPrecioCantidad(){
+    double calcularPrecioCantidad(){
            return this.cantidad * this.getPreciounit();  
     }   
         
-    int calcularDescuentoCantidad (){
+    double calcularDescuentoCantidad (){
             return calcularPrecioCantidad() * descuentoPorcentaje / 100;
     }
     
-    int calcularPrecioFinal (){
-           int precioCantidad = calcularPrecioCantidad();
-           int descuentoCantidad = calcularDescuentoCantidad(); 
+    double calcularPrecioFinal (){
+           double precioCantidad = calcularPrecioCantidad();
+           double descuentoCantidad = calcularDescuentoCantidad(); 
            
            if (cantidad >= cantidadMinima){
               return precioCantidad - descuentoCantidad;
@@ -54,11 +55,11 @@ public class ArticuloVenta extends Articulo{
         this.cantidadMinima = cantidadMinima;
     }
     
-    int getDescuentoPorcentaje (){
+    double getDescuentoPorcentaje (){
          return descuentoPorcentaje;
     }
     
-    void setDescuentoPorcentaje (int descuentoPorcentaje){
+    void setDescuentoPorcentaje (double descuentoPorcentaje){
         this.descuentoPorcentaje = descuentoPorcentaje;
     }
     
@@ -70,3 +71,4 @@ public class ArticuloVenta extends Articulo{
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>");
    }
 }
+

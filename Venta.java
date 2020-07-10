@@ -2,17 +2,17 @@
 
 public class Venta { 
         int codVenta;
-        
-        
+
         String continuarComprando;
         Cliente cliente;
-        GestionArticulos gestionArticulos;
+        ArticulosRepositorio articulosRepositorio;
         
-    public Venta (int codVenta,GestionArticulos gestionArticulos){
+
+    public Venta (int codVenta,ArticulosRepositorio articulosRepositorio){
 
         this.codVenta = codVenta;
-         this.gestionArticulos = gestionArticulos;
-        
+        this.articulosRepositorio = articulosRepositorio;
+
     }  
      
     Cliente getCliente(){
@@ -23,12 +23,12 @@ public class Venta {
            this.cliente = cliente;
     }
    
-    GestionArticulos getGestionArticulos(){
-            return gestionArticulos;
+    ArticulosRepositorio getArticulosRepositorio(){
+            return articulosRepositorio;
     }
    
-    void setGestionArticulos (GestionArticulos gestionArticulos){
-            this.gestionArticulos = gestionArticulos;
+    void setArticulosRepositorio (ArticulosRepositorio articulosRepositorio){
+            this.articulosRepositorio = articulosRepositorio;
     }
          
     int getCodVenta(){
@@ -47,11 +47,11 @@ public class Venta {
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("///CODIGO DE VENTA " + getCodVenta() +"///");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            getGestionArticulos().listarArticuloColeccion();
+            getArticulosRepositorio().listarArticuloColeccion();
             getCliente().imprimirCliente();
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             System.out.println ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            //getGestionArticulos().imprimirGestionArticulos();
+            
     }
 }
 

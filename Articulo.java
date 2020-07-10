@@ -2,13 +2,28 @@
 public class Articulo{
     String nombreArticulo=""; 
     int codArt;
-    int preciounit;
+    double preciounit;
+    
+    public Articulo(String nombreArticulo){
+        this.nombreArticulo=nombreArticulo;
+    }
                  
-    public Articulo(String nombreArticulo, int codArt, int preciounit){
+    public Articulo(String nombreArticulo, int codArt, double preciounit){
         this.nombreArticulo = nombreArticulo;
         this.codArt = codArt;
         this.preciounit = preciounit;
     }
+    
+    @Override
+    public boolean equals(Object objeto){
+        
+            if (this.getNombreArticulo().equals(((Articulo)objeto).getNombreArticulo()))
+                return true;
+             else return false;
+    }
+    
+     
+ 
     
      public String toString(){
 
@@ -19,7 +34,7 @@ public class Articulo{
         return codArt;
     }
     
-    void setCodArt (int codart){
+    void setCodArt (int codArt){
        this.codArt = codArt;
     }
     
@@ -28,14 +43,14 @@ public class Articulo{
     }
     
     void setNombreArticulo (String nombreArticulo){
-    this.nombreArticulo = nombreArticulo ;
+    this.nombreArticulo = nombreArticulo;
     }
     
-    int getPreciounit(){
+    double getPreciounit(){
         return preciounit;
     }
     
-    void setPreciounit(int preciounit){
+    void setPreciounit(double preciounit){
         this.preciounit = preciounit;
     }   
            
