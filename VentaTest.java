@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -8,15 +7,14 @@ import org.junit.Test;
 public class VentaTest{
     
     Venta venta1;
-    Venta venta2;
-    GestionArticulos gestionArticulos1;
-    GestionArticulos gestionArticulos2;
+    ArticulosRepositorio articulosRepositorio;
+    
     @Before
     public void setUp(){
+
         Articulo articulo1 = new Articulo ( "Carpeta", 1523, 10);
         Articulo articulo2 = new Articulo ( "Carpeta", 1524, 10);
-        //venta1= new Venta(123, 100,1 ,10, gestionArticulos1);
-        //venta2= new Venta(123, 100, 200,10, gestionArticulos1);
+       
     }  
     
     //@Test
@@ -50,4 +48,18 @@ public class VentaTest{
         
   //  }  
 //}
+
+    
+    
+   /* @Test
+    public void getCodVentaTest(){
+        //Dado
+        int codVentaReal = 123;
+        //When
+        int codVentaEsperado = venta1.getCodVenta() ;
+        //Then
+        assertEquals(codVentaEsperado,codVentaReal);
+    }
+    
+}*/
 
